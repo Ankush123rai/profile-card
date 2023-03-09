@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import MyCards from './Components/MyCards'
+import ProfileData from './ProfileData'
+import "./index.css"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// const data=(val)=>{
+
+// }
+
+const App = () => {
+ 
+const flexible = {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+   backgroundColor: "rgb(199, 37, 164)",
+    height: "100vh",
+    alignItems: "center",
 }
 
-export default App;
+  return (
+   <div style={flexible}>
+      {ProfileData.map(function(val){
+        console.log(val)
+        return (
+    <MyCards
+       image={val.image}
+        designation={val.designation}
+       name = {val.name}
+       description={val.description}
+      />
+  )
+      })}
+   </div>
+  )
+}
+
+export default App
