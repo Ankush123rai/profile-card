@@ -21,7 +21,7 @@ const flexible = {
   return (
    <div style={flexible}>
       {ProfileData.map(function(val){
-        console.log(val)
+        
         return (
     <MyCards
        image={val.image}
